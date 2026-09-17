@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Grass Fed Beef Boys">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Grass Fed Beef Boys"
+  >
+
   <title>Grass Fed Beef Boys</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -14,41 +24,88 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./style.css?v=20">
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header class="header">
-    <div class="logo">GFBB</div>
+
+    <div class="logo">
+      GFBB
+    </div>
 
     <div class="header-label">
-      EST. 2023
+      EST. 2026
     </div>
+
   </header>
 
+
+  <!-- HERO -->
   <main class="hero">
 
     <div class="hero-copy">
-      <p class="eyebrow">100% GRASS FED</p>
+
+      <p class="eyebrow">
+        100% GRASS FED
+      </p>
 
       <h1>
         GRASS FED<br>
         BEEF BOYS
       </h1>
+
+      <p class="subtitle">
+        Good beef. Good people. No nonsense.
       </p>
+
+      <button
+        class="sponsor-button"
+        type="button"
+        onclick="sponsorUs()"
+      >
+        SPONSOR US
+      </button>
+
     </div>
 
-<div class="image-placeholder">
-  <img src="img_1611_1024.jpg" alt="Grass Fed Beef Boys">
-</div>
+
+    <!-- IMAGE -->
+    <div class="image-placeholder">
+
+      <img
+        src="img_1611_1024.jpg"
+        alt="Grass Fed Beef Boys"
+      >
+
+    </div>
 
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <p>GRASS FED BEEF BOYS</p>
-    <p>THE GOOD STUFF.</p>
+
+    <p>
+      GRASS FED BEEF BOYS
+    </p>
+
+    <p>
+      THE GOOD STUFF.
+    </p>
+
   </footer>
+
+
+  <!-- SPONSOR BUTTON -->
+  <script>
+    function sponsorUs() {
+      alert("just kidding... unless?");
+    }
+  </script>
 
 </body>
 </html>
