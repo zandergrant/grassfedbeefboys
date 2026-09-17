@@ -15,22 +15,21 @@
 
   <title>Grass Fed Beef Boys</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Franklin:wght@700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@700;800;900&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="./style.css?v=20">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css?v=30">
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header class="header">
 
     <div class="logo">
@@ -44,46 +43,48 @@
   </header>
 
 
-  <!-- HERO -->
   <main class="hero">
 
-    <div class="hero-copy">
+    <section class="hero-copy">
 
       <p class="eyebrow">
         100% GRASS FED
       </p>
 
       <h1>
-        GRASS FED<br>
+        GRASS FED
+        <br>
         BEEF BOYS
       </h1>
 
+      <p class="subtitle">
+        Good beef. Good people. No nonsense.
+      </p>
+
       <button
         class="sponsor-button"
+        id="sponsorButton"
         type="button"
-        onclick="sponsorUs()"
       >
         SPONSOR US
       </button>
 
-    </div>
+    </section>
 
 
-    <!-- IMAGE -->
-    <div class="image-placeholder">
+    <section class="hero-image">
 
       <img
-        src="img_1611_1024.jpg"
+        src="./img_1611_1024.jpg"
         alt="Grass Fed Beef Boys"
       >
 
-    </div>
+    </section>
 
   </main>
 
 
-  <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
 
     <p>
       GRASS FED BEEF BOYS
@@ -96,11 +97,87 @@
   </footer>
 
 
-  <!-- SPONSOR BUTTON -->
+  <!-- POPUP -->
+
+  <div
+    class="popup-overlay"
+    id="popupOverlay"
+    aria-hidden="true"
+  >
+
+    <div
+      class="popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popupTitle"
+    >
+
+      <button
+        class="popup-close"
+        id="popupClose"
+        type="button"
+        aria-label="Close popup"
+      >
+        ×
+      </button>
+
+      <p class="popup-eyebrow">
+        SPONSORSHIP INQUIRY
+      </p>
+
+      <h2 id="popupTitle">
+        just kidding...
+        <br>
+        unless?
+      </h2>
+
+      <button
+        class="popup-dismiss"
+        id="popupDismiss"
+        type="button"
+      >
+        CARRY ON
+      </button>
+
+    </div>
+
+  </div>
+
+
   <script>
-    function sponsorUs() {
-      alert("just kidding... unless?");
+    const sponsorButton = document.getElementById("sponsorButton");
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupClose = document.getElementById("popupClose");
+    const popupDismiss = document.getElementById("popupDismiss");
+
+    function openPopup() {
+      popupOverlay.classList.add("active");
+      popupOverlay.setAttribute("aria-hidden", "false");
+      document.body.classList.add("popup-open");
     }
+
+    function closePopup() {
+      popupOverlay.classList.remove("active");
+      popupOverlay.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("popup-open");
+    }
+
+    sponsorButton.addEventListener("click", openPopup);
+
+    popupClose.addEventListener("click", closePopup);
+    popupDismiss.addEventListener("click", closePopup);
+
+    popupOverlay.addEventListener("click", function(event) {
+      if (event.target === popupOverlay) {
+        closePopup();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closePopup();
+      }
+    });
   </script>
 
 </body>
